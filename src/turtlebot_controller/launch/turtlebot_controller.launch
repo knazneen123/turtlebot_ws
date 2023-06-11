@@ -1,0 +1,14 @@
+<launch>
+  <!-- Include turtlebot3_world.launch -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+  </include>
+
+  <!-- Launch the turtlebot_controller node -->
+  <node name="turtlebot_controller" pkg="turtlebot_controller" type="turtlebot_controller_node" output="screen"> 
+  <param name="use_sim_time" value="true"/></node>
+
+</launch>
+
